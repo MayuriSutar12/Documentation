@@ -1,24 +1,35 @@
-2) Scalar-Box-WebApp UI : 
+## Scalar-Box-WebApp UI Setup
 
-Scalar-Box-WebApp UI Setup :
-        1. Clone Repository:
-Clone the repository from the Gitlab : 
-        2.  Navigate to Directory:
-Go to the directory:  $ cd clone/path/to/Scalar-Box-WebApp
+### Overview
 
-        3. System Prerequisites:
-Ensure you have the following installed:
-         Node version : 18.17.0
+Scalar-Box-WebApp UI is a user interface application that interacts with Scalar Auditor for Box and Scalar Box Event Log Fetcher App. It provides a graphical interface for users to perform various tasks related to auditing files and managing events.
 
-        4. Configure CLIENT_ID, CLIENT_SECRET, REDIRECT_URL  and End-Points Url (BASE_URL) :
-Open constant.js file which is available in path : Scalar_BOX_UI\src\utils
+### Setup Instructions
 
-![image12](assets/images/frontend2.png)
+1. **Clone Repository:**
+   - Clone the repository from GitLab.
 
-5. Commands to Build Application :
-npm install (it’ll install all the required dependency)
-npm run build
+2. **Navigate to Directory:**
+   - Use the command: `$ cd clone/path/to/Scalar-Box-WebApp` to navigate to the directory.
 
-Note : Configuration > OAuth 2.0 Redirect URI section. 
-Note: Add your  domain in Configuration >CORS Domains Section of  Scalar-Box-Event-Log-Fetcher-App
-Preview Functionality is Used through this setting.
+3. **System Prerequisites:**
+   - Ensure you have Node version 18.17.0 installed.
+
+4. **Configure Constants:**
+   - Open the `constant.js` file available in the path `Scalar_BOX_UI\src\utils`.
+   - Configure the following constants:
+     - `CLIENT_ID`
+     - `CLIENT_SECRET`
+     - `REDIRECT_URL`
+     - `BASE_URL`
+
+   ![Constant Configuration](assets/images/frontend2.png)
+
+5. **Commands to Build Application:**
+   - Run `npm install` to install all the required dependencies.
+   - Run `npm run build` to build the application.
+
+### Notes
+
+- Ensure to add your domain in the Configuration > OAuth 2.0 Redirect URI section.
+- Add your domain in the Configuration > CORS Domains Section of Scalar-Box-Event-Log-Fetcher-App for Preview Functionality usage.
