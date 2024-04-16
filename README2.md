@@ -50,7 +50,7 @@ please refer below documents as per the topic metioned
 * Installation and Setup Procedure[Setup of ‘Scalar Auditor for BOX’ (User OAuth 2.0 Authentication)](docs/Installation-and-Setup-Procedure.md)
 * [Setup of Scalar Box Event Log Fetcher App-Client Credentials Grant with Server Authentication](docs/installation-and-setup-procedure2.md) 
      
-* [Scalar DB Setup](docs/ScalarDB.md)       
+* [Scalar DB Setup](docs/scalarDB.md)       
 * [Scalar DL Setup]()      	
 * [Configuration of the backend Spring Boot application for ScalarDL]()          
 * [SpringBoot Application Setup]()	   
