@@ -55,5 +55,8 @@ please refer below documents as per the topic metioned
 * [Configuration of the backend Spring Boot application for ScalarDL](docs/springbootBackedDL.md)          
 * [SpringBoot Application Setup](docs/springboot-application-setup.md)	   
 * Frontend application Setup
+  There are two projects 
+  1.[Scalar-WebApp-Integration-Menu](docs/Scalar-WebApp-Integration-Menu.md)
+  2.[Scalar-Box-WebApp]
         
 * [Features Planned for Release V2.0]()                      
