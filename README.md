@@ -42,6 +42,7 @@ Listens and stores event data into the asset table if files are in a monitored s
 Hosted at https://test7.jeeni.in/scalar-box, serves as the project portal.
 
 
+
 # Functional Block of the Audit By Scalar
 
 Authorization and User Role Management
