@@ -28,3 +28,61 @@ Listens and stores event data into the asset table if files are in a monitored s
 •	Audit Set Validation: Enhanced validation capabilities to ensure the integrity of files within audit sets, further bolstering auditing measures.
 
 
+#Project Portal
+
+Hosted at https://test7.jeeni.in/scalar-box, serves as the project portal.
+
+
+#Functional Block of the Audit By Scalar
+
+Authorization and User Role Management
+
+•	Box Users can sign up.
+•	Users with admin/co-admin roles in the Box enterprise account are assigned the Audit admin role.
+•	Users with member roles in the Box enterprise account are assigned the GENERAL_USER role.
+•	External auditor registration involves user creation, deletion, and role assignment.
+•	Audit admins and external auditors use login credentials to access their dashboards.
+Event Types Monitored
+•	ITEM_CREATE
+•	ITEM_UPLOAD
+•	ITEM_MOVE
+•	ITEM_COPY
+•	ITEM_TRASH
+•	ITEM_UNDELETE_VIA_TRASH
+•	ITEM_RENAME
+•	ITEM_MODIFY
+
+#Audit Set Management
+
+
+•	Audit sets are lists of files/folders shared with Scalar-Box-Event-Log-Fetcher-App.
+•	Audit creation is performed by users with the Audit_admin role.
+•	Co-owners (AUDIT_ADMIN ROLE) and members (GENERAL USER) can add files/folders to audit sets.
+•	Audit Admins can set the allowed list of folders to be shared with external auditors.
+•	External auditors can be assigned to audit and audit groups for auditing purposes.
+
+#Audit Group Management
+
+
+•	Audit admins can create audit groups and add external auditor users to them.
+•	Groups can be assigned to audit sets.
+
+#User Management
+
+Audit Admins can create and delete users and assign roles from the dashboard.
+
+Validate Audit Set 
+•	The Validate Audit Set functionality ensures the integrity of files within the audit set by validating them against the allowed list of files. It provides an overall status indicating the number of files checked, the total count of files in the audit set, and the number of files found to be tampered or defective, along with their names and paths.
+
+#Event Log Viewing
+
+
+•	Users can access a comprehensive log of events related to files that are actively being monitored.
+•	Events may include actions such as creation, upload, move, copy, trash, undelete, rename, and modification of files.
+
+#File Inspection:
+
+
+•	Users have the ability to inspect copies and versions of files that are under monitoring.
+•	This functionality allows users to track the history and evolution of a file over time.
+
