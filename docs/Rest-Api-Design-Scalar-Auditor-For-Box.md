@@ -1,193 +1,172 @@
-REST API Design Document	2
-1.	User Controller	2
-1.1	/user/createUser	2
-1.2	/user/getManagedUser	4
-1.3	/user/deleteUser	5
-1.4	/user/login	6
-1.5	/user/updateUserRole	8
-1.6	/user/editUser	9
-1.7	/user/submitToken	10
-1.8	/user/userSignIn	12
-1.9	/user/getServiceToken	12
-1.10	/user/getListOfExternalAuditors	13
-1.11	/user/getOrgList	15
-1.12	/user/sendResetPasswordOTP	15
-1.13	/user/forgotPassword	17
-2.	Item Controller	19
-1.14	/item/getIntegratedItemDetails	19
-3.	Folder Controller	21
-1.15	/folder/getRootFolder	21
-1.16	/folder/getItemList	22
-4.	File Controller	23
-1.17	/file/getFileCopies	24
-1.18	/file/getFileVersion	25
-1.19	/file/getFileDetails	26
-1.20	/file/getFolderDetails	28
-1.21	/file/addExternalAuditorEventLog	30
-1.22	/file/getItemCollaborator	31
-1.23	/file/getFileVersionForExternal	33
-1.24	/file/checkTamperingStatus	34
-5.	Event Log Controller	35
-1.25	/eventLog/getEventsByDateRange	36
-1.26	/eventLog/getEventsByDateRangeAndUser	37
-1.27	/eventLog/getEventsByDateRangeAndEventType	39
-1.28	/eventLog/getEventsByDateRangeAndFileId	41
-1.29	/eventLog/getEventsByDateRangeAndUserAndItemId	43
-1.30	/eventLog/getEventsByDateRangeAndEventTypeAndItemIdAndUserId	45
-1.31	/eventLog/getEventsByDateRangeAndEventTypeAndItemId	46
-1.32	/eventLog/getEventsByDateRangeAndEventTypeAndUser	48
-6.	Audit Set Item Controller	50
-1.33	/auditSetItem/addItemToAuditSet	50
-1.34	/auditSetItem/viewItemsFromSelectedAuditSet	52
-1.35	/auditSetItem/getAllowListFromAuditSet	54
-1.36	/auditSetItem/getItemFromAuditSet	54
-7.	Audit Set Controller	56
-1.37	/auditSet/createAuditSet	56
-1.38	/auditSet/deleteAuditSet	58
-1.39	/auditSet/getMyAuditSetList	59
-1.40	/auditSet/viewExternalAuditorAccessLog	61
-1.41	/auditSet/updateAuditSetInfo	62
-1.42	/auditSet/validateAuditSet	64
-1.43	/auditSet/updateAuditSetsForItemId	65
-1.44	/auditSet/getMyAuditSetListForItemId	66
-8.	Audit Set Collaborator Controller	68
-1.45	/auditSetCollaborator/changeAuditSetOwner	68
-1.46	/auditSetCollaborator/getCollaboratorsForAuditSet	71
-9.	Audit Group Controller	73
-1.47	/auditGroup/createAuditGroup	73
-1.48	/auditGroup/updateAuditGroup	75
-1.49	/auditGroup/deleteAuditGroup	76
-1.50	/auditGroup/getListOfAuditGroupMembers	78
- 
-REST API Design Document
-1.	User Controller
-Overview
-User Controller is a REST API Controller for user-related operations related to ‘Scalar Auditor for BOX’ Application
+To convert this outline into a GitHub-flavored markdown document, you can follow this format:
 
-Following are the REST APIs for the user-related operations The API documentation and execution approach is documented on Swagger here.
-1.1	/user/createUser
-The API createUser is a POST API that creates a user in the system and stores the user details. These details include:
--	Name of the user, 
--	Email id of the user, 
--	Password, 
--	Organization name,
--	Role of user
-Input Parameters
-Name of the User: Should be non-null or empty Size must be less than 64 chars, Also, it shall not contain any special characters
-Email of the user:	Should be non-null, should be a valid email with @
-Password:		Should be non-null, and should contain a minimum 8 characters
-Response 
-As a response, a new user will be created in the system.
-Exceptions
-Following would be the exception conditions
+```markdown
+# REST API Design Document
 
-Exception	Error Message
-For invalid user emails	Incorrect user Email
-For invalid username	Invalid user name
-For invalid password	Invalid password
-If logged in, the user does not have the authority to create a user.	User does not have the required role to create the user
-If the user is already present	User is already exist
-If  a general exception	Failed to create user
-Operations performed at each layer of the framework by this API are as below:
-1.	Controller
-In this REST API, Following Object is accepted - {name,email,password,organization,roleJson,imageUrl}
+## 1. User Controller
+### 1.1 /user/createUser
+### 1.2 /user/getManagedUser
+### 1.3 /user/deleteUser
+### 1.4 /user/login
+### 1.5 /user/updateUserRole
+### 1.6 /user/editUser
+### 1.7 /user/submitToken
+### 1.8 /user/userSignIn
+### 1.9 /user/getServiceToken
+### 1.10 /user/getListOfExternalAuditors
+### 1.11 /user/getOrgList
+### 1.12 /user/sendResetPasswordOTP
+### 1.13 /user/forgotPassword
 
-2.	Business
-Following Object is accepted
-{name,email,password,organization,roleJson,imageUrl}
-●	Start transaction
-●	Call the createUser method from UserService, and if no exception occurs, submit the transaction
-●	
-3.	UserService
-Following Object is accepted –
-{name,email,password,organization,roleJson,imageUrl}
-●	Ensure there are no duplicate emails; throw an exception if one is found.
-●	Use PasswordEncoder to encrypt the password.
-●	Construct a user object from the provided data.
-●	Assign a role to the user in RoleJson.
-●	Create a role-user object and store it.
-●	Retrieve the user object by email.
-●	Determine the user's role in the security context.
-●	Proceed with user creation if the role is owner.
-●	Validate the user's email, name, and password.
-●	Set the user's role list in JSON format.
-●	Create or update users in the repository.
-●	If roles include AUDIT_ADMIN and GENERAL_USER, set userId; otherwise, null.
-●	Save the user to the repository.
-●	Save the user's role to UserRoleRepository.
-●	Handle exceptions and return appropriate responses.
+## 2. Item Controller
+### 1.14 /item/getIntegratedItemDetails
+
+## 3. Folder Controller
+### 1.15 /folder/getRootFolder
+### 1.16 /folder/getItemList
+
+## 4. File Controller
+### 1.17 /file/getFileCopies
+### 1.18 /file/getFileVersion
+### 1.19 /file/getFileDetails
+### 1.20 /file/getFolderDetails
+### 1.21 /file/addExternalAuditorEventLog
+### 1.22 /file/getItemCollaborator
+### 1.23 /file/getFileVersionForExternal
+### 1.24 /file/checkTamperingStatus
+
+## 5. Event Log Controller
+### 1.25 /eventLog/getEventsByDateRange
+### 1.26 /eventLog/getEventsByDateRangeAndUser
+### 1.27 /eventLog/getEventsByDateRangeAndEventType
+### 1.28 /eventLog/getEventsByDateRangeAndFileId
+### 1.29 /eventLog/getEventsByDateRangeAndUserAndItemId
+### 1.30 /eventLog/getEventsByDateRangeAndEventTypeAndItemIdAndUserId
+### 1.31 /eventLog/getEventsByDateRangeAndEventTypeAndItemId
+### 1.32 /eventLog/getEventsByDateRangeAndEventTypeAndUser
+
+## 6. Audit Set Item Controller
+### 1.33 /auditSetItem/addItemToAuditSet
+### 1.34 /auditSetItem/viewItemsFromSelectedAuditSet
+### 1.35 /auditSetItem/getAllowListFromAuditSet
+### 1.36 /auditSetItem/getItemFromAuditSet
+
+## 7. Audit Set Controller
+### 1.37 /auditSet/createAuditSet
+### 1.38 /auditSet/deleteAuditSet
+### 1.39 /auditSet/getMyAuditSetList
+### 1.40 /auditSet/viewExternalAuditorAccessLog
+### 1.41 /auditSet/updateAuditSetInfo
+### 1.42 /auditSet/validateAuditSet
+### 1.43 /auditSet/updateAuditSetsForItemId
+### 1.44 /auditSet/getMyAuditSetListForItemId
+
+## 8. Audit Set Collaborator Controller
+### 1.45 /auditSetCollaborator/changeAuditSetOwner
+### 1.46 /auditSetCollaborator/getCollaboratorsForAuditSet
+
+## 9. Audit Group Controller
+### 1.47 /auditGroup/createAuditGroup
+### 1.48 /auditGroup/updateAuditGroup
+### 1.49 /auditGroup/deleteAuditGroup
+### 1.50 /auditGroup/getListOfAuditGroupMembers
+```
+
+# REST API Design Document
+
+## 1. User Controller
+
+### Overview
+User Controller is a REST API Controller for user-related operations related to the 'Scalar Auditor for BOX' Application. The API documentation and execution approach is documented on Swagger [here](swagger_link).
+
+### 1.1 /user/createUser
+
+#### Description
+The API `createUser` is a POST API that creates a user in the system and stores the user details.
+
+#### Input Parameters
+- **Name of the User**: Should be non-null or empty, size must be less than 64 chars, and should not contain any special characters.
+- **Email of the user**: Should be non-null, should be a valid email with @.
+- **Password**: Should be non-null and contain a minimum of 8 characters.
+- **Organization name**
+- **Role of user**
+
+#### Response 
+A new user will be created in the system.
+
+#### Exceptions
+| Exception              | Error Message                                  |
+|------------------------|------------------------------------------------|
+| Invalid user emails    | Incorrect user Email                           |
+| Invalid username       | Invalid user name                              |
+| Invalid password       | Invalid password                               |
+| User does not have authority | User does not have the required role to create the user |
+| User is already present | User is already exist                          |
+| General exception      | Failed to create user                          |
+
+#### Operations performed at each layer of the framework
+1. Controller: Accepts {name,email,password,organization,roleJson,imageUrl} object.
+2. Business: Accepts {name,email,password,organization,roleJson,imageUrl} object. Starts transaction, calls `createUser` method from UserService, and submits the transaction.
+3. UserService: Accepts {name,email,password,organization,roleJson,imageUrl} object. Ensures no duplicate emails, encrypts password, constructs user object, assigns role, saves user to repository, handles exceptions.
+
+### 1.2 /user/getManagedUser
+
+#### Description
+The API `getManagedUser` is a GET API that accepts details of users based on orgId and retrieves data including userEmail, id, name, password, roleJson, organizationName, and imageUrl.
+
+#### Input Parameters
+- **Token(currentUser)**: Important for fetching user list.
+
+#### Response 
+A list of users from the system.
+
+#### Response DTO
+- **Id**: User id
+- **Name**: Name of user
+- **Email**: Email of user
+- **Password**: Password
+- **roleJson**: Role of user (AUDIT_ADMIN, GENERAL_USER, EXTERNAL_AUDITOR)
+- **organizationName**: Organization name
+- **imageUrl**: User image
+
+#### Exceptions
+| Exception      | Error Message |
+|----------------|---------------|
+| User not present | User not found |
+
+#### Operations performed at each layer of the framework
+1. Controller: Accepts {orgId} object.
+2. Business: Accepts {orgId} object. Starts transaction, calls `getManagedList` method from UserService, and submits the transaction.
+3. UserService: Accepts {orgId} object. Retrieves user information from the organization, fetches a list of users, handles errors or exceptions.
+
+### 1.3 /user/deleteUser
+
+#### Description
+The API `deleteUser` is a DELETE API. It takes user email as input and deletes the corresponding user from the system.
+
+#### Input Parameters
+- **User email**: Should check if the user is already deleted or not.
+
+#### Response 
+A user will be deleted from the system.
+
+#### Exceptions
+| Exception      | Error Message |
+|----------------|---------------|
+| User is not present | User not found |
+| User does not have authority | User does not have the required role to delete the user |
+| General exception | An error occurred while deleting the user |
+
+#### Operations performed at each layer of the framework
+1. Controller: Accepts {userEmail} object.
+2. Business: Accepts {userEmail} object. Starts transaction, calls `deleteUser` method from UserService, and submits the transaction.
+3. UserService: Accepts {userEmail} object. Constructs a user object, checks if the user is present, allows only AUDIT_ADMINs to delete users, deletes user from various tables, returns success message if user deleted successfully.
 
 
-1.2	/user/getManagedUser
-The API getManagedUser is a GET API that accepts details of users based on orgId and retrieves data including userEmail, id, name, password, roleJson, organizationName, and imageUrl.
-Input Parameters:
-       Token(currentUser)  is important for fetching user list
-Response 
-As a response, to fetch a list of users from the system.
-The Response DTO
-Field name	Description
-Id	User id 
-Name	Name of user
-Email	Email of user
-Password	Password
-roleJson	Role of user
-(AUDIT_ADMIN,GENERAL_USER,EXTERNAL_AUDITOR)
-organizationName	Organization name
-imageUrl	User image
 
-Exceptions
-Following would be the exception conditions
 
-Exception	Error Message
-For user not present	User not found
 
-Operations performed at each layer of the framework by this API are as below:
-1.	Controller
-      In this REST API, Following Object is accepted –{orgId}
 
-2.	Business
-     Following Object is accepted –{orgId} 
-●	Start transaction
-●	Call the getManagedList method from UserService, and if no exception occurs, submit the transaction
-
-3.	UserService:
-     Following params are accepted- {orgId}	
-●	Retrieve information about the user from the organization
-●	Utilize the user repository or database to fetch a list of users.
-●	User the userInfo object or method to obtain the list of users.
-●	Iterate through the list of users to retrieve individual user information.
-●	Handle any potential errors or exceptions during the retrieval process.
-●	Utilize the retrieved user information for further processing or analysis as needed.
-
-1.3	 /user/deleteUser
-The API deleteUser is a DELETE API. It takes user email as input and deletes the corresponding user from the system.
-Input Parameters:
-User email:Should check if the user is already deleted or not.
-Response 
-As a response,a user will be deleted from the system.
-Exceptions
-Following would be the exception conditions
-
-Exception	Error Message
-For user is not present	User not found
-If the user does not have the authority to delete the user	User does not have the required role to delete the user
-If general exception	An error occurred while deleting the user
-Operations performed at each layer of the framework by this API are as below:
-1.	Controller
-      In this REST API, Following Object is accepted - {userEmail}
-
-2.	Business
-     Following Object is accepted - {userEmail}
-●	Start transaction
-●	Call deleteUser method from UserService and if no exception occurs submit transaction
-●	
-3.	UserService
-      Following Object is accepted - {userEmail}
-●	Construct a user object.
-●	check if the  user is present or not.
-●	Only AUDIT_ADMINs have permission to delete users from the system.
-●	If a user is deleted, they will also be removed from the user_roles table, as well as from the audit_set, audit_set_collaborators, audit_group, and user_audit_group tables.
-●	Get message is user deleted successfully.
 1.4	/user/login
 The API login is a Post API used for user authentication. It accepts details such as the user's email and password to authenticate the user.
 Input Parameters:
