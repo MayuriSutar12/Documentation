@@ -62,3 +62,8 @@ Please include the four parameters as depicted in the snapshot below.
 
 *	Add short and long descriptions.
 *	Upload app screenshots and an app icon.
+```
+git status
+git add
+git commit
+```
