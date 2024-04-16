@@ -51,7 +51,7 @@ please refer below documents as per the topic metioned
 * [Setup of Scalar Box Event Log Fetcher App-Client Credentials Grant with Server Authentication](docs/installation-and-setup-procedure2.md) 
      
 * [Scalar DB Setup](docs/scalarDB.md)       
-* [Scalar DL Setup]()      	
+* [Scalar DL Setup](docs/scalarDL.md)      	
 * [Configuration of the backend Spring Boot application for ScalarDL]()          
 * [SpringBoot Application Setup]()	   
 * Frontend application Setup
