@@ -112,5 +112,4 @@ The document provides an overview of how tokens from Box are handled in the syst
 https://docs.google.com/document/d/1VVSwy0XehhoGgnrC56hNUX2pUF3-qJL2CNYHGLwHy1A/edit
 
 # Scalar-Box-Backend-Setup-Documentation
-The "Box App Setup Documentation" provides a comprehensive guide for setting up two Box applications: Scalar Auditor for BOX and Scalar Box Event Log Fetcher App. Here's an overview of the documentation:
-https://docs.google.com/document/d/1yHqil1vVjdDj1KJ9Xlgs9rfkPIqhJYC6Z9K4zgi8ksA/edit
+The "Box App Setup Documentation" provides a comprehensive guide for setting up two Box applications: Scalar Auditor for BOX and Scalar Box Event Log Fetcher App. Here's an overview of the documentation:https://docs.google.com/document/d/1yHqil1vVjdDj1KJ9Xlgs9rfkPIqhJYC6Z9K4zgi8ksA/edit
