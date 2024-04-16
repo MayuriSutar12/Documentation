@@ -52,10 +52,9 @@ Steps to Create the App:
 *	The file/folder from which this integration is invoked
 *	Integration Type: Both
 
-5.	Configure Callback Configuration settings.
-●	Integration Status: Set the status to "Development".
+5.	Configure Callback Configuration settings.     
+●	Integration Status: Set the status to "Development".   
 Please include the four parameters as depicted in the snapshot below.
-
 
 ![image12](assets/images/imagess.png)
 
