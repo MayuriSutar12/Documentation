@@ -1,9 +1,24 @@
-We use two Box applications.
+## Box Applications Overview
 
-**Scalar Auditor for BOX**: This utilizes User OAuth 2.0 Authentication and integrates seamlessly with our web app. It leverages the BOX API to gather vital information regarding users, files, or folders as needed.
+We utilize two Box applications to enhance our workflow and ensure comprehensive auditing and monitoring capabilities.
 
-**Scalar Box Event Log Fetcher App**: This application operates on Client Credentials Grant with Server Authentication. 
-Its primary function is to create Automated Users, serving as Collaborators for files/folders designated for auditing purposes within our Audit Set. 
-Additionally, it efficiently fetches user events for comprehensive monitoring.
+### 1. Scalar Auditor for BOX
+
+**Authentication Method:** User OAuth 2.0 Authentication
+
+**Purpose:**
+- Seamlessly integrates with our web application.
+- Utilizes the Box API to gather essential information about users, files, or folders.
+
+### 2. Scalar Box Event Log Fetcher App
+
+**Authentication Method:** Client Credentials Grant with Server Authentication
+
+**Purpose:**
+- Operates on Client Credentials Grant with Server Authentication.
+- Creates Automated Users to serve as Collaborators for files/folders designated for auditing purposes within our Audit Set.
+- Fetches user events efficiently for comprehensive monitoring.
+
+These applications play crucial roles in ensuring the security and integrity of our data stored in Box. They enable seamless integration with our workflow and provide robust monitoring and auditing capabilities.
 
 
