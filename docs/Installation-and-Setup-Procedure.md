@@ -57,7 +57,7 @@ Steps to Create the App:
 Please include the four parameters as depicted in the snapshot below.
 
 
-![image](https://github.com/MayuriSutar12/Documentation/assets/124232796/0e6b5806-5cbc-4060-912c-0510f3acfdae)
+![image](docs/assets/images/imagess.png)
 
 ##	App Center Tab:
 
