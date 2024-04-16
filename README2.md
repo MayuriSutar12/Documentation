@@ -53,7 +53,7 @@ please refer below documents as per the topic metioned
 * [Scalar DB Setup](docs/scalarDB.md)       
 * [Scalar DL Setup](docs/scalarDL.md)      	
 * [Configuration of the backend Spring Boot application for ScalarDL](docs/springbootBackedDL.md)          
-* [SpringBoot Application Setup]()	   
+* [SpringBoot Application Setup](docs/springboot-application-setup.md)	   
 * Frontend application Setup
         
 * [Features Planned for Release V2.0]()                      
