@@ -1,6 +1,4 @@
-# Audit By Scalar Release V1.0
-
-Application Overview
+# Overview
 Audit by Scalar is an application that is integrated with the BOX application. The primary objective is to store user event logs on files managed by BOX outside the BOX application. These logs are then analyzed in different ways and this data is made available to the external auditors for performing audits of important files.
 The necessary administrative functionalities required by the users are also implemented in this application.
 The application is developed in Springboot framework for the Backend and React JS for front end. It uses Cassandra as a database and it is managed by ScalarDB. The file records are also managed by the application in ScalarDL so that file tampering can be detected using the file validation feature of ScalarDL.
@@ -46,15 +44,18 @@ The application is developed in Springboot framework for the Backend and React J
 10.	Validate the Audit Set to check if any of the items in the Audit set are tampered.          
 
 **Note**: More details are available in the document: Audit By Scalar_ HL Design Document
-
+please refer below documents as per the topic metioned
 
 * [BOX application types used](docs/box-application.md)    
 * [Installation and Setup Procedure](docs/Installation-and-Setup-Procedure.md)
 * [Installation and Setup Procedure2](docs/Installation-and-Setup-Procedure2.md) 
+
 * [Setup of ‘Audit By Scalar’ User OAuth 2.0 Authentication]()      
 * [Setup of Scalar Box Event Log Fetcher App Client Credentials Grant with Server Authentication]()       
 * [Scalar DB Setup]()       
 * [Scalar DL Setup]()      	
 * [Configuration of the backend Spring Boot application for ScalarDL]()          
-* [SpringBoot Application Setup]()	           
+* [SpringBoot Application Setup]()	   
+* Frontend application Setup
+        
 * [Features Planned for Release V2.0]()                      
