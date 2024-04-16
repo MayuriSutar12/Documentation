@@ -56,15 +56,20 @@ Event Types Monitored
 
 
 •	Audit sets are lists of files/folders shared with Scalar-Box-Event-Log-Fetcher-App.
+
 •	Audit creation is performed by users with the Audit_admin role.
+
 •	Co-owners (AUDIT_ADMIN ROLE) and members (GENERAL USER) can add files/folders to audit sets.
+
 •	Audit Admins can set the allowed list of folders to be shared with external auditors.
+
 •	External auditors can be assigned to audit and audit groups for auditing purposes.
 
 # Audit Group Management
 
 
 •	Audit admins can create audit groups and add external auditor users to them.
+
 •	Groups can be assigned to audit sets.
 
 # User Management
