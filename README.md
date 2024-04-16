@@ -107,3 +107,6 @@ Audit Admins can create and delete users and assign roles from the dashboard.
 
 •	This functionality allows users to track the history and evolution of a file over time.
 
+## functionality-doc-of-scalar-box
+The document provides an overview of how tokens from Box are handled in the system, the login flow for users, and the design details of event fetching implementation.
+https://docs.google.com/document/d/1VVSwy0XehhoGgnrC56hNUX2pUF3-qJL2CNYHGLwHy1A/edit
