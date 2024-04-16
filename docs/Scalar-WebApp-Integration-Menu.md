@@ -1,26 +1,37 @@
-1) Scalar-WebApp-Integration-Menu : This is the application used with the box when the user selects file/folder and chooses to open it with Scalar Auditor for Box.
+## Scalar-WebApp-Integration-Menu Setup
 
-Scalar-WebApp-Integration-Menu Setup :
-        1. Clone Repository:
-Clone the repository from the Gitlab : 
-        2.  Navigate to Directory:
-Go to the directory:  $ cd clone/path/to/Scalar-WebApp-Integration-Menu
+### Overview
 
-        3. System Prerequisites:
-Ensure you have the following installed:
-         Node version : 18.17.0
+Scalar-WebApp-Integration-Menu is an application designed to work seamlessly with Box, allowing users to select files or folders and open them using Scalar Auditor for Box.
 
-        4. Configure CLIENT_ID, CLIENT_SECRET, REDIRECT_URL, SCALAR_BOX_URL  and End-Points Url (BASE_URL) :
-Open constant.js file which is available in path : SCALAR-INTEGRATED-MENU\src\utils
+### Setup Instructions
 
+1. **Clone Repository:**
+   - Clone the repository from GitLab.
 
+2. **Navigate to Directory:**
+   - Use the command: `$ cd clone/path/to/Scalar-WebApp-Integration-Menu` to navigate to the directory.
 
-5. Commands to Build Application :
-•	npm install (it’ll install all the required dependency)
-•	npm run build
+3. **System Prerequisites:**
+   - Make sure you have Node version 18.17.0 installed on your system.
 
+4. **Configure Constants:**
+   - Open the `constant.js` file located in the path `SCALAR-INTEGRATED-MENU\src\utils`.
+   - In this file, configure the following constants:
+     - `CLIENT_ID`
+     - `CLIENT_SECRET`
+     - `REDIRECT_URL`
+     - `SCALAR_BOX_URL`
+     - `BASE_URL`
 
-![image12](assets/images/frontend.png)
-Note : you have add this redirect url in the in box app(Scalar Auditor for Box) developer console  in
+   ![Constant Configuration](assets/images/frontend.png)
+
+5. **Commands to Build Application:**
+   - Run `npm install` to install all the required dependencies.
+   - After installation, run `npm run build` to build the application.
+
+### Note
+
+- Ensure that you add the redirect URL in the Box app (Scalar Auditor for Box) developer console. This is crucial for the application's functionality.
 
 
