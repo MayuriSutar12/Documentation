@@ -57,7 +57,7 @@ Steps to Create the App:
 Please include the four parameters as depicted in the snapshot below.
 
 
-![image](docs/assets/images/imagess.png)
+![image12](docs/assets/images/imagess.png)
 
 ##	App Center Tab:
 
