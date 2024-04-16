@@ -45,4 +45,4 @@ The application is developed in Springboot framework for the Backend and React J
 
 10.	Validate the Audit Set to check if any of the items in the Audit set are tampered.          
 
-Note: More details are available in the document: Audit By Scalar_ HL Design Document        
+**Note**: More details are available in the document: Audit By Scalar_ HL Design Document        
