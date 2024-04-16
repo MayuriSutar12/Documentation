@@ -1,4 +1,4 @@
-#	Setup of ‘Scalar Auditor for BOX’ (User OAuth 2.0 Authentication)
+##	Setup of ‘Scalar Auditor for BOX’ (User OAuth 2.0 Authentication)
 
 Overview
 
@@ -10,7 +10,7 @@ This app serves below purpose:
 
 Steps to Create the App:
 
-1.	Create a New App in Box Developer Console:
+##	Create a New App in Box Developer Console:
 
 *	Navigate to the Box Developer Console.
 *	Click on "Create New App".
@@ -19,12 +19,12 @@ Steps to Create the App:
 *	External System Integration: File Auditing Tool by Scalar Inc.
 	
 
-2.	Authentication Method Selection
+##	Authentication Method Selection
 
 •	Choose "User Authentication (OAuth 2.0)".
 
 
-3.	Configuration:
+##	Configuration:
 
 *	Go to the Configuration tab.
 *	Configure OAuth 2.0 Redirect URI and CORS Domains.
@@ -39,7 +39,7 @@ Steps to Create the App:
 
 *	Enable "Make API calls using as-user header" in Advanced Features.
 
-4.	Integrations Tab:
+##	Integrations Tab:
 
 *	Click on "Create New Web App Integration".
 *	Fill in the Integration Name and Description.
