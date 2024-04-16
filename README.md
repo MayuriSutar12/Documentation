@@ -109,7 +109,7 @@ Audit Admins can create and delete users and assign roles from the dashboard.
 
 # Functionality-Doc-Of-Scalar-Box
 The document provides an overview of how tokens from Box are handled in the system, the login flow for users, and the design details of event fetching implementation.
-* [Some doc](abc.md)
+* [Some doc](docs/abc.md)
 https://docs.google.com/document/d/1VVSwy0XehhoGgnrC56hNUX2pUF3-qJL2CNYHGLwHy1A/edit
 
 # Scalar-Box-Backend-Setup-Documentation
