@@ -49,7 +49,7 @@ The application is developed in Springboot framework for the Backend and React J
 
 
 * [BOX application types used](docs/box-application.md)    
-* Installation and Setup Procedure]()      
+* Installation and Setup Procedure](docs/Installation-and-Setup-Procedure.md)      
 * [Setup of ‘Audit By Scalar’ User OAuth 2.0 Authentication]()      
 * [Setup of Scalar Box Event Log Fetcher App Client Credentials Grant with Server Authentication]()       
 * [Scalar DB Setup]()       
