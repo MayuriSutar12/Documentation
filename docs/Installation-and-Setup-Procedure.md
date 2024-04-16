@@ -8,7 +8,7 @@ This app serves below purpose:
 *	Its primary usage involves the creation of a Web App Integration, specifically designed as the Scalar File Auditing Tool. 
 *	This integration utilizes the BOX API, using OAuth 2.0 authentication, to gather essential information related to users, files, or folders as required.
 
-Steps to Create the App:
+**Steps to Create the App**:
 
 ##	Create a New App in Box Developer Console:
 
@@ -62,3 +62,16 @@ Please include the four parameters as depicted in the snapshot below.
 
 *	Add short and long descriptions.
 *	Upload app screenshots and an app icon.
+
+**Approval Process**:
+
+Box Admin Console:
+
+Navigate to the Box Admin Console.
+Custom Apps Manager:
+
+Go to the "Apps" tab and select "Custom Apps Manager".
+
+In the User Authentication App tab, click on the "Add App" button.
+Paste the Client ID of the Scalar Auditor for BOX (User OAuth 2.0 Authentication) and click "Next".
+Check the application scopes and approve the app.
