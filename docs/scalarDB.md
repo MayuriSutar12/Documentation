@@ -24,7 +24,7 @@ The setup is compatible with either a Windows machine running WSL or any system 
 Go to the directory:
 
 
-$ cd clone/path/to/Scalar-Box-Event-Log-Tool
+'''$ cd clone/path/to/Scalar-Box-Event-Log-Tool'''
 
 4.	Start Cassandra:
 Ensure your Cassandra database is running.
@@ -37,7 +37,7 @@ Adjust properties like scalar.db.contact_points, scalar.db.username, scalar.db.p
 Run the schema loading command:
 
 
-$ java -jar schema-loader/scalardb-schema-loader-3.12.1.jar --coordinator -c=scalardb.properties -f=schema-loader/scalar_box_schema.json --replication-factor=1 --replication-strategy=SimpleStrategy
+'''$ java -jar schema-loader/scalardb-schema-loader-3.12.1.jar --coordinator -c=scalardb.properties -f=schema-loader/scalar_box_schema.json --replication-factor=1 --replication-strategy=SimpleStrategy'''
 
 Note: Adjust -replication-factor as needed.
 
