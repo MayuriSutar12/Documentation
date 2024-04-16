@@ -42,7 +42,7 @@ Hosted at https://test7.jeeni.in/scalar-box, serves as the project portal.
 
 
 
-# Functional Block of the Audit By Scalar
+## Functional Block of the Audit By Scalar
 
 Authorization and User Role Management
 
@@ -79,34 +79,34 @@ Event Types Monitored
 
 •	External auditors can be assigned to audit and audit groups for auditing purposes.
 
-# Audit Group Management
+## Audit Group Management
 
 
 •	Audit admins can create audit groups and add external auditor users to them.
 
 •	Groups can be assigned to audit sets.
 
-# User Management
+## User Management
 
 Audit Admins can create and delete users and assign roles from the dashboard.
 
-# Validate Audit Set 
+## Validate Audit Set 
 •	The Validate Audit Set functionality ensures the integrity of files within the audit set by validating them against the allowed list of files. It provides an overall status indicating the number of files checked, the total count of files in the audit set, and the number of files found to be tampered or defective, along with their names and paths.
 
-# Event Log Viewing
+## Event Log Viewing
 
 
 •	Users can access a comprehensive log of events related to files that are actively being monitored.
 
 •	Events may include actions such as creation, upload, move, copy, trash, undelete, rename, and modification of files.
 
-# File Inspection:
+## File Inspection:
 
 
 •	Users have the ability to inspect copies and versions of files that are under monitoring.
 
 •	This functionality allows users to track the history and evolution of a file over time.
 
-## functionality-doc-of-scalar-box
+# functionality-doc-of-scalar-box
 The document provides an overview of how tokens from Box are handled in the system, the login flow for users, and the design details of event fetching implementation.
 https://docs.google.com/document/d/1VVSwy0XehhoGgnrC56hNUX2pUF3-qJL2CNYHGLwHy1A/edit
