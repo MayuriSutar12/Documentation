@@ -59,4 +59,4 @@ please refer below documents as per the topic metioned
   1.[Scalar-WebApp-Integration-Menu](docs/Scalar-WebApp-Integration-Menu.md)     
   2.[Scalar-Box-WebApp](docs/Scalar-Box-WebApp.md) 
         
-* [Features Planned for Release V2.0]()                      
+* [Features Planned for Release V2.0](docs/features.md)                      
