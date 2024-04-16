@@ -47,7 +47,7 @@ The application is developed in Springboot framework for the Backend and React J
 please refer below documents as per the topic metioned
 
 * [BOX application types used](docs/box-application.md)    
-* [Setup of ‘Scalar Auditor for BOX’ (User OAuth 2.0 Authentication)](docs/Installation-and-Setup-Procedure.md)
+* Installation and Setup Procedure[Setup of ‘Scalar Auditor for BOX’ (User OAuth 2.0 Authentication)](docs/Installation-and-Setup-Procedure.md)
 * [Setup of Scalar Box Event Log Fetcher App-Client Credentials Grant with Server Authentication](docs/Installation-and-Setup-Procedure2.md) 
 
 * [Setup of ‘Audit By Scalar’ User OAuth 2.0 Authentication]()      
