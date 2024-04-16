@@ -66,7 +66,7 @@ Event Types Monitored
 •	ITEM_RENAME
 •	ITEM_MODIFY
 
-# Audit Set Management
+## Audit Set Management
 
 
 •	Audit sets are lists of files/folders shared with Scalar-Box-Event-Log-Fetcher-App.
