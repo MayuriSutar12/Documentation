@@ -56,7 +56,7 @@ please refer below documents as per the topic metioned
 * [SpringBoot Application Setup](docs/springboot-application-setup.md)	   
 * Frontend application Setup
   There are two projects 
-  1.[Scalar-WebApp-Integration-Menu](docs/Scalar-WebApp-Integration-Menu.md)
-  2.[Scalar-Box-WebApp]
+  1.[Scalar-WebApp-Integration-Menu](docs/Scalar-WebApp-Integration-Menu.md)     
+  2.[Scalar-Box-WebApp](docs/Scalar-Box-WebApp.md) 
         
 * [Features Planned for Release V2.0]()                      
