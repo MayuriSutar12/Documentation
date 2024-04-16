@@ -71,18 +71,20 @@ Event Types Monitored
 
 Audit Admins can create and delete users and assign roles from the dashboard.
 
-Validate Audit Set 
+# Validate Audit Set 
 •	The Validate Audit Set functionality ensures the integrity of files within the audit set by validating them against the allowed list of files. It provides an overall status indicating the number of files checked, the total count of files in the audit set, and the number of files found to be tampered or defective, along with their names and paths.
 
 # Event Log Viewing
 
 
 •	Users can access a comprehensive log of events related to files that are actively being monitored.
+
 •	Events may include actions such as creation, upload, move, copy, trash, undelete, rename, and modification of files.
 
 # File Inspection:
 
 
 •	Users have the ability to inspect copies and versions of files that are under monitoring.
+
 •	This functionality allows users to track the history and evolution of a file over time.
 
