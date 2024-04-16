@@ -47,10 +47,15 @@ Hosted at https://test7.jeeni.in/scalar-box, serves as the project portal.
 Authorization and User Role Management
 
 •	Box Users can sign up.
+
 •	Users with admin/co-admin roles in the Box enterprise account are assigned the Audit admin role.
+
 •	Users with member roles in the Box enterprise account are assigned the GENERAL_USER role.
+
 •	External auditor registration involves user creation, deletion, and role assignment.
+
 •	Audit admins and external auditors use login credentials to access their dashboards.
+
 Event Types Monitored
 •	ITEM_CREATE
 •	ITEM_UPLOAD
