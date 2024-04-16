@@ -28,6 +28,30 @@ Listens and stores event data into the asset table if files are in a monitored s
 
 •	Files/Folder Addition to Audit Set: Implemented functionality to add files and folders to audit sets seamlessly.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 •	Sign-Up and Sign-In for Box Users: Enabled sign-up and sign-in functionalities for Box users to access auditing features.
 
 •	Login for External Auditors: Developed login functionalities specifically tailored for external auditors, ensuring secure access to audit-related data.
@@ -113,3 +137,17 @@ The document provides an overview of how tokens from Box are handled in the syst
 Hello
 # Scalar-Box-Backend-Setup-Documentation
 The "Box App Setup Documentation" provides a comprehensive guide for setting up two Box applications: Scalar Auditor for BOX and Scalar Box Event Log Fetcher App. Here's an overview of the documentation:https://docs.google.com/document/d/1yHqil1vVjdDj1KJ9Xlgs9rfkPIqhJYC6Z9K4zgi8ksA/edit
+
+
+
+
+
+
+
+
+
+
+
+
+![image](https://github.com/MayuriSutar12/Documentation/assets/124232796/0e6b5806-5cbc-4060-912c-0510f3acfdae)
+
