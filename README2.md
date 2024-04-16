@@ -48,12 +48,12 @@ The application is developed in Springboot framework for the Backend and React J
 **Note**: More details are available in the document: Audit By Scalar_ HL Design Document
 
 
-* [BOX application types used](docs/box application.md)
-* Installation and Setup Procedure]()
-* [Setup of ‘Audit By Scalar’ User OAuth 2.0 Authentication]()
-* [Setup of Scalar Box Event Log Fetcher App Client Credentials Grant with Server Authentication]()
-* [Scalar DB Setup]()
-* [Scalar DL Setup]()	
-* [Configuration of the backend Spring Boot application for ScalarDL]()
-* [SpringBoot Application Setup]()	
-* [Features Planned for Release V2.0]()      
+* [BOX application types used](docs/box application.md)    
+* Installation and Setup Procedure]()      
+* [Setup of ‘Audit By Scalar’ User OAuth 2.0 Authentication]()      
+* [Setup of Scalar Box Event Log Fetcher App Client Credentials Grant with Server Authentication]()       
+* [Scalar DB Setup]()       
+* [Scalar DL Setup]()      	
+* [Configuration of the backend Spring Boot application for ScalarDL]()          
+* [SpringBoot Application Setup]()	           
+* [Features Planned for Release V2.0]()                      
