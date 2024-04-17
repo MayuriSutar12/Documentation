@@ -232,22 +232,24 @@ Scalar Auditor for BOX application has primarily three roles:
 ○	Using WEB UI
  ![Callback Configuration](assets/images/webui.png)
 
- 
+
 ○	
 ○	Using WEB UI  for external auditor
-
+ ![Callback Configuration](assets/images/webuiexteernalAuditor.png)
  
- 
+
 
 ●	6. Architecture 
 The overall architecture of this application can be viewed as follows. 
 ○	Application architecture diagram
  
+ 
+  ![Callback Configuration](assets/images/architecture.png)
 The backend application integrates with BOX by actually using two BOX applications. 
 The BOX App 1 uses Client Credentials as authentication method and is used for fetching event logs.
 The BOX App 1 uses OAuth 2.0 and is integrated with BOX for all the other functionalities implemented.
 The frontend application uses React JS.
- 
+
 ●	7. 	Rest APIs Implemented
 Following is the list of Rest APIs used for this application and their respective functionality.
 
