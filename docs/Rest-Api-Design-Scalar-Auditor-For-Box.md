@@ -77,7 +77,7 @@ To convert this outline into a GitHub-flavored markdown document, you can follow
 ## 1. User Controller
 
 ### Overview
-User Controller is a REST API Controller for user-related operations related to the 'Scalar Auditor for BOX' Application. The API documentation and execution approach is documented on Swagger [here](swagger_link).
+User Controller is a REST API Controller for user-related operations related to the 'Scalar Auditor for BOX' Application. The API documentation and execution approach is documented on Swagger [here](http://20.40.52.159:8095/swagger-ui/index.html).
 
 ### 1.1 /user/createUser
 
@@ -559,7 +559,7 @@ Following would be the exception conditions:
 ## 2. Item Controller
 
 ### Overview
-Item Controller is a REST API Controller for item-related operations on the Box application. Below are the REST API’s for getting integrated item detail related operations. The API documentation and execution approach are documented on Swagger [here](link_to_swagger_here).
+Item Controller is a REST API Controller for item-related operations on the Box application. Below are the REST API’s for getting integrated item detail related operations. The API documentation and execution approach are documented on Swagger [here](http://20.40.52.159:8095/swagger-ui/index.html).
 
 ### 1.14 /item/getIntegratedItemDetails
 
@@ -612,7 +612,7 @@ Following would be the exception conditions:
 ## 3. Folder Controller
 
 ### Overview
-Folder Controller is a REST API Controller for folder-related operations on the Box application. Below are the REST API’s for the get root folder related operations. The API documentation and execution approach are documented on Swagger [here](link_to_swagger_here).
+Folder Controller is a REST API Controller for folder-related operations on the Box application. Below are the REST API’s for the get root folder related operations. The API documentation and execution approach are documented on Swagger [here](http://20.40.52.159:8095/swagger-ui/index.html).
 
 ### 1.15 /folder/getRootFolder
 
