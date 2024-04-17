@@ -163,51 +163,48 @@ A user will be deleted from the system.
 3. UserService: Accepts {userEmail} object. Constructs a user object, checks if the user is present, allows only AUDIT_ADMINs to delete users, deletes user from various tables, returns success message if user deleted successfully.
 
 
-
-
-
-
-```markdown
 ## 1.4 /user/login
 
 ### Description
-The API `login` is a Post API used for user authentication. It accepts details such as the user's email and password to authenticate the user.
+The API `login` is a POST API used for user authentication. It accepts the user's email and password to authenticate the user.
 
 #### Input Parameters
 - **User email**: Should be a valid input.
 - **Password**: Should not be empty.
 
 #### Response 
-As a response, a user will be logged into the system.
+Upon successful authentication, the user will be logged into the system. The response includes user data and access tokens.
 
 #### Exceptions
-| Exception      | Error Message |
-|----------------|---------------|
-| User is not present | User not found |
-| User does not have authority | User does not have the required role to delete the user |
-| General exception | An error occurred while deleting the user |
+| Exception                 | Error Message                                            |
+|---------------------------|----------------------------------------------------------|
+| User is not present       | User not found                                           |
+| User does not have authority | User does not have the required role to perform the action |
+| General exception         | An error occurred while processing the request          |
 
-#### Operations performed at each layer of the framework
-1. Controller
-   - In this REST API, following object is accepted - {userEmail,password}.
+#### Operations Performed at Each Layer of the Framework
+1. **Controller**
+   - Accepts the following object: `{userEmail, password}`.
 
-2. Business
-   - Following object is accepted - {userEmail,password}.
-   - Start transaction.
-   - The login method initiates a distributed transaction and attempts to login.
-   - It authenticates the user credentials, generates a JWT token, retrieves user details, and generates Box access tokens.
-   - Upon successful login, it commits the transaction and returns user data along with tokens.
-   - If an error occurs during the transaction, it rolls back and throws a generic exception.
-   - Call the login method from UserService, and if no exception occurs, submit the transaction.
+2. **Business**
+   - Accepts the following object: `{userEmail, password}`.
+   - Starts a transaction.
+   - Calls the `login` method from UserService.
+   - Initiates a distributed transaction for login.
+   - Authenticates the user credentials.
+   - Generates a JWT token and retrieves user details.
+   - Generates Box access tokens.
+   - Commits the transaction upon successful login and returns user data along with tokens.
+   - Rolls back and throws a generic exception if an error occurs during the transaction.
 
-3. UserService
-   - Following object is accepted – {userEmail,password}.
-   - The `generateToken` method creates a JWT token for a given user, including additional claims. 
-   - It utilizes the `doGenerateToken` method to construct the token with specified claims, subject, issuance, expiration, and signing algorithms.
+3. **UserService**
+   - Accepts the following object: `{userEmail, password}`.
+   - The `generateToken` method creates a JWT token for the user, including additional claims.
+   - Utilizes the `doGenerateToken` method to construct the token with specified claims, subject, issuance, expiration, and signing algorithms.
    - The `getByUserName` method retrieves a user entity from the repository based on the provided username within the context of a distributed transaction.
-``` 
 
-```markdown
+
+
 ## 1.5 /user/updateUserRole
 
 ### Description
@@ -253,8 +250,8 @@ As a response, a new user role will be updated in the system.
    - Update the user's role JSON representation in the database with the new roles.
    - Create a new user and save it to the user repository.
    - Create a role for the specific user and save it to the UserRoleRepository.
-``` 
-```markdown
+ 
+
 ## 1.6 /user/editUser
 
 ### Description
@@ -302,8 +299,8 @@ As a response, a new user will be created in the system.
    - Update the email of collaborators, including owners, co-owners, members, and reviewers, if necessary.
    - Parse JSON to retrieve the member list of an audit group.
    - Update the email of members within the audit group, if necessary.
-``` 
-```markdown
+
+
 ## 1.7 /user/submitToken
 
 ### Description
@@ -341,8 +338,7 @@ As a response, a user will be submitted token to the system.
    - Then, it saves the user's access token information, including expiration details.
    - If the user already exists, it updates the access token information.
    - Finally, it returns a response, indicating the success of the operation.
-``` 
-```markdown
+
 ## 1.8 /user/userSignIn
 
 ### Description
@@ -374,9 +370,8 @@ As a response, a user will be signed in to the system.
    - This token is created with an expiration time and signed using a secret key.
    - The token is then returned along with other relevant information, such as a refresh token, access token, and user details, in a response object.
    - Additionally, a Box API connection is established to obtain a service account access token for further operations.
-``` 
 
-```markdown
+
 ## 1.9 /user/getServiceToken
 
 ### Description
@@ -403,8 +398,8 @@ As a response, a user will get a service token from the system.
    - It starts by establishing a connection to Box's enterprise account using a utility method. Then, it sets the connection to act as itself.
    - After that, it constructs a response object with an HTTP status of OK, an empty message, and a status of true. 
    - The response includes data containing the access token, refresh token, and expiration time obtained from the Box connection.
-``` 
-```markdown
+
+
 ## 1.10 /user/getListOfExternalAuditors 
 
 ### Description
@@ -444,8 +439,8 @@ For external auditors, the list is empty. | User list is empty
    - Following parameters are accepted - User Token.
    - Fetch a list of external auditors using the `getByRole` method from the role user repository.
    - Obtain the list of external auditors using the userInfo object.
-``` 
-```markdown
+
+
 ## 1.11 /user/getOrgList
 
 ### Description
@@ -474,8 +469,8 @@ As a response, a list of organizations will be fetched from the system.
    - Following parameters are accepted - User Token.
    - Fetch a list of organizations using the `getOrganizationList` method from the organization repository.
    - Obtain a list of organizations using the Organization object.
-``` 
-```markdown
+
+
 ## 1.12 /user/sendResetPasswordOTP
 
 ### Description
@@ -517,8 +512,8 @@ Following would be the exception conditions:
    - Send OTP to email to reset password.
    - Save OTP details in the user otp repository.
    - Send user ID, user email, validity time, and OTP in response.
-``` 
-```markdown
+
+
 ## 1.13 /user/forgotPassword
 
 ### Description
@@ -559,10 +554,8 @@ Following would be the exception conditions:
    - Ensure that the OTP has not expired by comparing its expiry date with the current date; if expired, throw a GenericException.
    - Encrypt the new password provided in the updatePasswordDTO using the password encoder.
    - Update the user's password in the database with the newly encrypted password.
-``` 
 
 
-```markdown
 ## 2. Item Controller
 
 ### Overview
@@ -614,7 +607,6 @@ Following would be the exception conditions:
    - Commit the transaction and construct the integrated response, including item details and user information.
    - Return an API response with the integrated response.
    - Rollback the transaction in case of errors during the commit process.
-```
 
 
 ## 3. Folder Controller
@@ -654,7 +646,7 @@ Following would be the exception conditions:
    - Retrieve information about the root folder from the box connection.
    - Get the folder ID using a box connection.
 
-```markdown
+
 ## 1.16 /folder/getItemList
 
 ### Description
@@ -700,11 +692,11 @@ Following would be the exception conditions:
    - Retrieve information about the folder using a box connection.
    - Fetch a list of items from the box application using the box connection.
    - Obtain the list of items using the `itemDetailsList` object.
-```
 
 
 
-```markdown
+
+
 ## 1.17 /file/getFileCopies
 
 ### Description
@@ -752,8 +744,8 @@ Following would be the exception conditions:
    - Get the file owned by objects
    - Get details of file copies from the item BySha1Repsitory
    - Obtain the `CopyItems` object as a response
-```
-```markdown
+
+
 ## 1.18 /file/getFileVersion
 
 ### Description
@@ -791,10 +783,10 @@ As a response, get the file version using a box connection.
    - Obtain details about the file version using the box connection.
    - Get details of file versions from the Box application.
    - Get details in the `FileVersions` object.
-```
 
 
-```markdown
+
+
 ## 1.19 /file/getFileDetails
 
 ### Description
@@ -892,10 +884,8 @@ As a response, get folder details from the box connection.
    - Obtain the details of the file using the Box folder object.
    - Specify the user making the action or the owner of the folder in the ownedBy and modifiedBy objects.
    - Create an object for auditor logs and save it to the AuditorLogRepository.
-```
 
 
-```markdown
 ## 1.21 /file/addExternalAuditorEventLog
 
 ### Description
@@ -979,9 +969,8 @@ As a response, a list of item collaborators will be fetched from the system.
    - Retrieve information about the item collaborator using the box connection.
    - Get a list of item collaborators using a box connection, and also get details about the owner of the file.
    - Obtain the list of item collaborator and owner details using the item Collaborator object.
-```
 
-```markdown
+
 ## 1.23 /file/getFileVersionForExternal
 
 ### Description
@@ -1053,14 +1042,9 @@ As a response, check the file tampering status on the system.
    - The method checks if a file has been tampered with by comparing its details in Box with its details in Scalar DL. 
    - If the ledger status is "OK,"  it retrieves the file's information from Box and validates it against Scalar DL ledger entries. 
    - If the details match, it returns "NOT_TAMPERED"; if not monitored in Scalar DL, it returns "NOT_MONITORED"; otherwise, it returns "TAMPERED."
-```
 
 
 
-
-
-
-```markdown
 ## 1.25 /eventLog/getEventsByDateRange
 
 ### Description
@@ -1155,8 +1139,8 @@ As a response, a list of events will be fetched from the system.
    - If there's only one day in the range, it fetches events for that day. For the first date, it fetches events until midnight. 
    - For the last date, it fetches events until the end of the day. For dates in between, it fetches events for the entire day. 
    - Finally, it returns a list of event details gathered during the process.
-```
-```markdown
+
+
 ## 1.27 /eventLog/getEventsByDateRangeAndEventType
 
 ### Description
@@ -1252,8 +1236,8 @@ As a response, a list of events will be fetched from the system.
    - If there's only one day in the range, it fetches events for that day. For the first date, it fetches events until midnight. 
    - For the last date, it fetches events until the end of the day. For dates in between, it fetches events for the entire day. 
    - Finally, it returns a list of event details gathered during the process.
-```  
-```markdown
+
+
 ## 1.29 /eventLog/getEventsByDateRangeAndUserAndItemId
 
 ### Description
@@ -1352,8 +1336,8 @@ As a response, a list of events will be fetched from the system.
    - If there's only one day in the range, it fetches events for that day. For the first date, it fetches events until midnight. 
    - For the last date, it fetches events until the end of the day. For dates in between, it fetches events for the entire day. 
    - Finally, it returns a list of event details gathered during the process.
-```
-```markdown
+
+
 ## 1.31 /eventLog/getEventsByDateRangeAndEventTypeAndItemId
 
 ### Description
@@ -1452,8 +1436,8 @@ As a response, a list of events will be fetched from the system.
    - If there's only one day in the range, it fetches events for that day. For the first date, it fetches events until midnight. 
    - For the last date, it fetches events until the end of the day. For dates in between, it fetches events for the entire day. 
    - Finally, it returns a list of event details gathered during the process.
-```
-```markdown
+
+
 ## 1.33 /auditSetItem/addItemToAuditSet
 
 ### Description
@@ -1548,8 +1532,8 @@ If all the Input Parameters met properly, information about the audit set will b
    - Additionally, it updates the access status for audit set collaborators to "UNDER_REVIEW".
    - If an error occurs during processing, it logs the error and continues to the next item.
    - Finally, it returns an API response containing the fetched audit set items' details or a message indicating an empty item list.
-```
-```markdown
+
+
 ## 1.35 /auditSetItem/getAllowListFromAuditSet
 
 ### Description
@@ -1620,8 +1604,8 @@ As a response, fetch the item information from the audit set.
    - It iterates through items in a specified folder, checking if each item is allowed or denied based on the Audit Set.
    - It updates lists of denied and allowed items accordingly. If all items are allowed, it updates the Audit Set with the new allowed items.
    - Finally, it returns the updated list of item visibilities.
-```
-```markdown
+
+
 ## 1.37 /auditSet/createAuditSet
 
 ### Description
@@ -1695,8 +1679,8 @@ If all the Input Parameters were met properly, an audit set would be deleted suc
    - If authorized, delete the audit set and associated collaborators.
    - Clear audit group mappings and update the audit set status.
    - Return a response indicating success or failure.
-```
-```markdown
+
+
 ## 1.39 /auditSet/getMyAuditSetList
 
 ### Description
@@ -1787,8 +1771,8 @@ As a response, get a list of external auditor logs from the system.
    - If the list of external auditor logs is not empty, retrieve the list successfully
    - Retrieve ExtAuditorAccessLog list
    - If the list is empty, return an empty list
-```
-```markdown
+
+
 ## 1.41 /auditSet/updateAuditSetInfo
 
 ### Description
@@ -1877,8 +1861,8 @@ As a response, an audit set will be validated.
             - Validate folder contents and update verification statuses.
     - Summarize the tampered files for the response.
     - Build and return a response with total files checked, tampered file count, and details.
-```
-```markdown
+
+
 ## 1.43 /auditSet/updateAuditSetsForItemId
 
 ### Description
@@ -1949,9 +1933,8 @@ As a response, the user will get a list of audit sets for the itemId from the sy
     - If audit set lists are found, return a successful ApiResponse with HttpStatus OK.
     - If no audit set lists are found, return a successful ApiResponse with an empty list and HttpStatus OK.
     - Handle exceptions such as NotFoundException and other unexpected errors, returning appropriate ApiResponse objects with error messages and corresponding HttpStatus codes.
-```  
 
-```markdown
+
 ## 1.45 /auditSetCollaborator/changeAuditSetOwner
 
 ### Description
@@ -2030,16 +2013,9 @@ As a response, a list of audit set collaborators will be fetched from the system
     - Construct an AuditSetCollaboratorList with the collaborator and audit group lists.
     - Return ApiResponse with the constructed AuditSetCollaboratorList.
     - Handle exceptions and return the appropriate ApiResponse for errors.
-```  
 
 
 
-
-
-
-
-
-```markdown
 ## 1.47 /auditGroup/createAuditGroup
 
 ### Description
@@ -2126,8 +2102,8 @@ As a response, an audit group will be updated in the system.
         - Update the audit group's member list JSON in the database.
         - Update the associated audit set mappings and their group details.
     - Return ApiResponse indicating a successful update or failure with appropriate messages and HTTP status codes.
-```  
-```markdown
+
+
 ## 1.49 /auditGroup/deleteAuditGroup
 
 ### Description
@@ -2198,7 +2174,7 @@ As a response, a list of audit group members will be fetched from the system.
     - Convert memberList json into a list of groupUserPrivileges.
     - Fetch a list of audit group member lists from the memberList json.
     - Obtain the list of audit groups using the auditGroupMemberList object.
-```  
+
 
 
 
