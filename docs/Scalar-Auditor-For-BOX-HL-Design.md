@@ -250,90 +250,65 @@ The BOX App 1 uses Client Credentials as authentication method and is used for f
 The BOX App 1 uses OAuth 2.0 and is integrated with BOX for all the other functionalities implemented.
 The frontend application uses React JS.
 
-●	7. 	Rest APIs Implemented
-Following is the list of Rest APIs used for this application and their respective functionality.
+Got it! Here's the GitHub document with the list of REST APIs used for the application and their respective functionalities formatted in a table:
 
-No	API Name	Key Functionality
-1	createUser	To create an External Auditor in the system
-2	getManagedUser	Get a list of users in the system for a particular organization.
-3	deleteUser	Delete user from the system.
-4	login	To login to the application WEB UI
+---
 
-5	editUser	To update user information
+## Rest APIs Implemented
 
-6	updateUserRole	To change or add user role
-7	submitToken	For Token implementation
+Here's the list of REST APIs implemented:
 
-8	userSignIn	For sign in functionality
-
-9	getServiceToken	To get a service token from the system.
-10	getListOfExternalAuditors	To get a list of external auditors from the system
-
-11	getOrgList	Get a list of organizations from the system.This is the list of external organizations from which the Auditors are associated for Audit purpose
-14	getIntegratedItemDetails	Get the information related to integrated items from the system.
-
-15	getRootFolder	Get the root folder from the system.
-16	  getItemList	To get list of items from the system using a box connection
-
-17	  getFileCopies	Get file copies from the system.
-
-18	getFileVersion	Get the file version using a box connection.
-
-
-19	getFileDetails	Get file details using a box connection.
-
-20	getFolderDetails	Get folder details using a box connection.
-
-
-21	addExternalAuditorEventLog	An event log of the operation performed by the External Auditor is added in the database.
-22	getItemCollaborator	Get a list of collaborators for the specified Audit Set.
-
-23	getFileVersionForExternal	Get the file version using the box connection.
-
-24	checkTamperingStatus	Check the file tampering status by using ScalarDL validate functionality.
-
-25	getEventsByDateRange	Get a list of events as per the specified time period from the system.
-
-26	getEventsByDateRangeAndUser	Get a list of events performed by a specific user as per the specified time period
-
-27	getEventsByDateRangeAndEventType	Get a list of specific type of events performed as per the specified time period
-
-28	getEventsByDateRangeAndFileId	Get a list of events performed on a specific file as per the specified time period
-29 	getEventsByDateRangeAndUserAndItemId	Get a list of events performed on a specific file by a specific user as per the specified time period
-30	getEventsByDateRangeAndEventTypeAndItemIdAndUserId	Get a list of specific type of events performed on a specific file by a specific user as per the specified time period
-31	getEventsByDateRangeAndEventTypeAndItemId	Get a list of specific type of events performed on a specific file as per the specified time period
-32	getEventsByDateRangeAndEventTypeAndUser	Get a list of specific type of events performed by a specific user as per the specified time period
-33	addItemToAuditSet	Add a file or folder to an Audit Set
-
-34	viewItemsFromSelectedAuditSet	View a list of items in the Audit Set
-
-35	getAllowListFromAuditSet	Get a list of allowed items from a specified audit set
-
-36	getItemFromAuditSet	get a list of items from the audit set. 
-
-37	createAuditSet	Create a new audit set 
-38	deleteAuditSet	Delete an Audit Set
-
-39	getMyAuditSetList	Get the list of Audit sets for which the user is a member.
-
-40	viewExternalAuditorAccessLog	View the log of activities performed by external auditors on a specified file
-41	updateAuditSetInfo	Update the Audit Set details
-
-42	validateAuditSet	Validate all the items of Audit Set and report if any item/items are tampered
-
-43	updateAuditSetsForItemId	Update the association of an item with the Audit Sets. 
-44	getMyAuditSetListForItemId	Get the list of Audit Sets in which the specified item is added for monitoring
-45	changeAuditSetOwner	Change the owner of the audit set.
-
-46	getCollaboratorsForAuditSet	Get a list of audit set collaborators from the database.
-
-47	createAuditGroup	Create a new audit group which is a group of external auditors
-
-48	updateAuditGroup	Update the details of Audit group such as name or members.
-49	deleteAuditGroup	Delete an Audit group
-
-50	getListOfAuditGroupMembers	Get a list of audit group members.
+| No | API Name | Key Functionality |
+|----|----------|-------------------|
+| 1  | createUser | To create an External Auditor in the system. |
+| 2  | getManagedUser | Get a list of users in the system for a particular organization. |
+| 3  | deleteUser | Delete user from the system. |
+| 4  | login | To login to the application WEB UI. |
+| 5  | editUser | To update user information. |
+| 6  | updateUserRole | To change or add user role. |
+| 7  | submitToken | For Token implementation. |
+| 8  | userSignIn | For sign in functionality. |
+| 9  | getServiceToken | To get a service token from the system. |
+| 10 | getListOfExternalAuditors | To get a list of external auditors from the system. |
+| 11 | getOrgList | Get a list of organizations from the system. This is the list of external organizations from which the Auditors are associated for Audit purpose. |
+| 12 | getIntegratedItemDetails | Get the information related to integrated items from the system. |
+| 13 | getRootFolder | Get the root folder from the system. |
+| 14 | getItemList | To get a list of items from the system using a box connection. |
+| 15 | getFileCopies | Get file copies from the system. |
+| 16 | getFileVersion | Get the file version using a box connection. |
+| 17 | getFileDetails | Get file details using a box connection. |
+| 18 | getFolderDetails | Get folder details using a box connection. |
+| 19 | addExternalAuditorEventLog | An event log of the operation performed by the External Auditor is added in the database. |
+| 20 | getItemCollaborator | Get a list of collaborators for the specified Audit Set. |
+| 21 | getFileVersionForExternal | Get the file version using the box connection. |
+| 22 | checkTamperingStatus | Check the file tampering status by using ScalarDL validate functionality. |
+| 23 | getEventsByDateRange | Get a list of events as per the specified time period from the system. |
+| 24 | getEventsByDateRangeAndUser | Get a list of events performed by a specific user as per the specified time period. |
+| 25 | getEventsByDateRangeAndEventType | Get a list of specific type of events performed as per the specified time period. |
+| 26 | getEventsByDateRangeAndFileId | Get a list of events performed on a specific file as per the specified time period. |
+| 27 | getEventsByDateRangeAndUserAndItemId | Get a list of events performed on a specific file by a specific user as per the specified time period. |
+| 28 | getEventsByDateRangeAndEventTypeAndItemIdAndUserId | Get a list of specific type of events performed on a specific file by a specific user as per the specified time period. |
+| 29 | getEventsByDateRangeAndEventTypeAndItemId | Get a list of specific type of events performed on a specific file as per the specified time period. |
+| 30 | getEventsByDateRangeAndEventTypeAndUser | Get a list of specific type of events performed by a specific user as per the specified time period. |
+| 31 | addItemToAuditSet | Add a file or folder to an Audit Set. |
+| 32 | viewItemsFromSelectedAuditSet | View a list of items in the Audit Set. |
+| 33 | getAllowListFromAuditSet | Get a list of allowed items from a specified audit set. |
+| 34 | getItemFromAuditSet | Get a list of items from the audit set. |
+| 35 | createAuditSet | Create a new audit set. |
+| 36 | deleteAuditSet | Delete an Audit Set. |
+| 37 | getMyAuditSetList | Get the list of Audit sets for which the user is a member. |
+| 38 | viewExternalAuditorAccessLog | View the log of activities performed by external auditors on a specified file. |
+| 39 | updateAuditSetInfo | Update the Audit Set details. |
+| 40 | validateAuditSet | Validate all the items of Audit Set and report if any item/items are tampered. |
+| 41 | updateAuditSetsForItemId | Update the association of an item with the Audit Sets. |
+| 42 | getMyAuditSetListForItemId | Get the list of Audit Sets in which the specified item is added for monitoring. |
+| 43 | changeAuditSetOwner | Change the owner of the audit set. |
+| 44 | getCollaboratorsForAuditSet | Get a list of audit set collaborators from the database. |
+| 45 | createAuditGroup | Create a new audit group which is a group of external auditors. |
+| 46 | updateAuditGroup | Update the details of Audit group such as name or members. |
+| 47 | deleteAuditGroup | Delete an Audit group. |
+| 48 | getListOfAuditGroupMembers | Get a list of audit group members. |
 
 
 Refer : 
-1.	Rest API Design_Scalar Auditor for BOX.docx for all the details of rest APIs implemented.
+1.	Rest API Design_Scalar Auditor for BOX.docx ![Callback Configuration](assets/images/Rest-Api-Design-Scalar-Auditor-For-Box.png) for all the details of rest APIs implemented.
