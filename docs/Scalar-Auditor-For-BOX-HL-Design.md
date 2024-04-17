@@ -311,4 +311,4 @@ Here's the list of REST APIs implemented:
 
 
 Refer : 
-1.![Callback Configuration](assets/images/Rest-Api-Design-Scalar-Auditor-For-Box.png) for all the details of rest APIs implemented.
+1.(docs/Rest-Api-Design-Scalar-Auditor-For-Box.md) for all the details of rest APIs implemented.
