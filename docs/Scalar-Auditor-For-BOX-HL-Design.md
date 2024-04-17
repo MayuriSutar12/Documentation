@@ -311,4 +311,5 @@ Here's the list of REST APIs implemented:
 
 
 Refer : 
-1.(docs/Rest-Api-Design-Scalar-Auditor-For-Box.md) for all the details of rest APIs implemented.
+1.[Rest API Design_Scalar Auditor for BOX](docs/Rest-Api-Design-Scalar-Auditor-For-Box.md) for all the details of rest APIs implemented.
+
