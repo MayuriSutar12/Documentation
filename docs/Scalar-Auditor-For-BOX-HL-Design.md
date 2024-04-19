@@ -223,7 +223,7 @@ Scalar Auditor for BOX application has primarily three roles:
 
 	
 
-5.	User Functionality Flow
+5.	User Functionality Flow                       
 ○	Using BOX Integrations Menu
  
 ![Callback Configuration](assets/images/boxIntegrationMenu.png)
