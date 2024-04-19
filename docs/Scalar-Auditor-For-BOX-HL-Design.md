@@ -78,9 +78,7 @@ Here's a summary of role operations within the Scalar Auditor for BOX applicatio
 | AUDIT_ADMIN + GEN_USER  | Remove role of AUDIT_ADMIN | GEN_USER           |
 | AUDIT_ADMIN + GEN_USER  | Remove role of GEN_USER    | AUDIT_ADMIN        |
 	
-Sure, here's the content for your GitHub document:
 
----
 
 ## Audit Set Management
 
