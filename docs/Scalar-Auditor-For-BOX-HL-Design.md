@@ -234,14 +234,14 @@ Scalar Auditor for BOX application has primarily three roles:
 
 
 ○	
-○	Using WEB UI  for external auditor
+○	Using WEB UI  for external auditor  
  ![Callback Configuration](assets/images/webuiexteernalAuditor.png)
  
 
 
 ●	6. Architecture 
-The overall architecture of this application can be viewed as follows. 
-○	Application architecture diagram
+The overall architecture of this application can be viewed as follows.   
+○	Application architecture diagram   
  
  
   ![Callback Configuration](assets/images/architecture.png)
