@@ -206,6 +206,7 @@ Upon successful authentication, the user will be logged into the system. The res
 
 
 
+
 ## 1.5 /user/updateUserRole
 
 ### Description
