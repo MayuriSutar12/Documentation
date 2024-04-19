@@ -240,7 +240,8 @@ Scalar Auditor for BOX application has primarily three roles:
 
 
 ●	6. Architecture 
-The overall architecture of this application can be viewed as follows.               
+The overall architecture of this application can be viewed as follows.           
+    
 ○	Application architecture diagram   
  
  
