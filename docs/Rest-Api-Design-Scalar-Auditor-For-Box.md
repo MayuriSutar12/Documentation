@@ -660,6 +660,7 @@ The API `getItemList` is a GET API that retrieves a list of items. It accepts de
 ### Response 
 As a response, fetch a list of items from the system using a box connection.
 
+
 ### Response DTO: FolderDetailsDto
 | Field Name  | Description            |
 |-------------|------------------------|
