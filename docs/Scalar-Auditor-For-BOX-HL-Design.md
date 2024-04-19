@@ -67,7 +67,7 @@ Possible roles for any Organization User include:
 - GEN_USER
 - AUDIT_ADMIN + GEN_USER
 
-		Here's a summary of role operations within the Scalar Auditor for BOX application:
+Here's a summary of role operations within the Scalar Auditor for BOX application:
 
 | Previous Role           | Operation             | Role after Operation   |
 |-------------------------|-----------------------|------------------------|
