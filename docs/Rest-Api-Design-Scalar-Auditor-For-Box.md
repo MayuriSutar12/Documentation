@@ -78,7 +78,7 @@ To convert this outline into a GitHub-flavored markdown document, you can follow
 ## 1. User Controller
 
 ### Overview
-User Controller is a REST API Controller for user-related operations related to the 'Scalar Auditor for BOX' Application. The API documentation and execution approach is documented on Swagger [here](http://20.40.52.159:8095/swagger-ui/index.html).
+User Controller is a REST API Controller for user-related operations related to the 'Scalar Auditor for BOX' Application. The API documentation and execution approach is documented on Swagger [here](http://3.6.109.82:8095/swagger-ui/index.html).
 
 ### 1.1 /user/createUser
 
