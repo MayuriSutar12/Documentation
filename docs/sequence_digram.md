@@ -10,9 +10,10 @@ sequenceDiagram
     participant GenAI as GenAI Processor
 
     User ->> UI: Select Course subject,chapter(getQuestionsForChapter)/(getQuestionsForQuePaper)
-
+    
 
     UI ->> Backend: Retrieve Questions & Images
+    Backend -->> UI: Return Question Id, Question img, options img, answer key, Solution img
     Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
     Backend ->> TempDB: Store Data for Processing
 
