@@ -9,7 +9,7 @@ sequenceDiagram
     participant S3 as S3 Storage
     participant GenAI as GenAI Processor
 
-    User ->> UI: Select Course & Chapter
+    User ->> UI: Select Course subject,chapter
     UI ->> Backend: Retrieve Questions & Images
     Backend ->> MainDB: Get Questions for Chapter
     Backend ->> S3: Fetch Images for Questions
