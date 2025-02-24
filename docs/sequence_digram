@@ -1,26 +1,29 @@
-Participant User  
-Participant System  
-Participant Database  
-Participant S3  
-Participant GenAI  
+sequenceDiagram
+    participant User
+    participant UI
+    participant Backend
+    participant TempDB
+    participant S3
+    participant GenAI
+    participant MainDB
 
-User -> System: Select Course and Chapter  
-System -> Database: Retrieve all questions  
-System -> S3: Retrieve Images  
-System -> Database: Store Data in Temp Data Store  
+    User ->> UI: Select Course & Chapter
+    UI ->> Backend: Retrieve Questions & Images
+    Backend ->> MainDB: Fetch Questions
+    Backend ->> S3: Fetch Images
+    Backend ->> TempDB: Store Data for Processing
 
-loop Process One Question at a Time  
-    System -> GenAI: Process Question  
-    GenAI -> System: Return Processed Question  
-    System -> Database: Update Status in Temp Store  
-    System -> Database: Update Question Info  
-end  
+    loop Process Each Question
+        Backend ->> TempDB: Fetch Next Question
+        Backend ->> GenAI: Process Question
+        GenAI -->> Backend: Return Processed Data
+        Backend ->> TempDB: Update Processing Status
+    end
 
-User -> System: View Progress  
-System -> Database: Fetch Temp Store Data  
+    Backend ->> MainDB: Update Question Data
+    Backend ->> TempDB: Update Final Status
+    Backend ->> TempDB: Delete Temp Data
+    UI ->> Backend: Fetch Progress Status
+    Backend ->> UI: Return Progress Data
 
-alt Process Completed  
-    System -> Database: Update All Questions  
-    System -> Database: Delete Temp Store Data  
-end  
-
+    Note right of UI: UI Displays Processing Progress
