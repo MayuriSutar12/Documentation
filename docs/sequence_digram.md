@@ -28,6 +28,8 @@ sequenceDiagram
 
 
     UI ->> TempDB: Fetch Progress Status
+   TempDB ->> JeeniDB: Fetch Progress Status
+  JeeniDB ->> Mathpix: Fetch Progress Status 
     TempDB ->> UI: Return Processing Status
     UI -->> User: Display Progress
 
