@@ -1,16 +1,19 @@
+
+### Sequence Diagram
+mermaid
 sequenceDiagram
-    participant User
-    participant UI
-    participant Backend
-    participant TempDB
-    participant S3
-    participant GenAI
-    participant MainDB
+    participant User as User
+    participant UI as UI
+    participant Backend as Backend
+    participant TempDB as Temp Data Store
+    participant MainDB as Main Database
+    participant S3 as S3 Storage
+    participant GenAI as GenAI Processor
 
     User ->> UI: Select Course & Chapter
     UI ->> Backend: Retrieve Questions & Images
-    Backend ->> MainDB: Fetch Questions
-    Backend ->> S3: Fetch Images
+    Backend ->> MainDB: Get Questions for Chapter
+    Backend ->> S3: Fetch Images for Questions
     Backend ->> TempDB: Store Data for Processing
 
     loop Process Each Question
@@ -20,10 +23,12 @@ sequenceDiagram
         Backend ->> TempDB: Update Processing Status
     end
 
-    Backend ->> MainDB: Update Question Data
-    Backend ->> TempDB: Update Final Status
-    Backend ->> TempDB: Delete Temp Data
-    UI ->> Backend: Fetch Progress Status
-    Backend ->> UI: Return Progress Data
+    Backend ->> MainDB: Update Questions with Processed Data
+    Backend ->> TempDB: Mark Process as Completed
+    Backend ->> TempDB: Delete Temporary Data
 
-    Note right of UI: UI Displays Processing Progress
+    UI ->> Backend: Fetch Progress Status
+    Backend ->> UI: Return Processing Status
+    UI -->> User: Display Progress
+
+```
