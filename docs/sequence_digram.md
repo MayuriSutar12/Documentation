@@ -11,7 +11,7 @@ sequenceDiagram
 
     User ->> UI: Select Course subject,chapter
     UI ->> Backend: Retrieve Questions & Images
-    Backend ->> MainDB: Get Questions for Chapter
+    Backend ->> MainDB: Get Questions for Chapter/Get Questions for QuestionPaper
     Backend ->> S3: Fetch Images for Questions
     Backend ->> TempDB: Store Data for Processing
 
