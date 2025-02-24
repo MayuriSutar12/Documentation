@@ -9,7 +9,10 @@ sequenceDiagram
     participant Mathpix as Mathpix
     participant GenAI as GenAI Processor
 
-    User ->> UI: Select Course, Subject, Chapter, Get Questions (getAllCourses, getSubjectFromCourse, getChapterFromSubject, getQuestionsForChapter/getQuestionsForQuePaper)
+    User ->> UI: Select Course, Subject, Chapter, Get Questions
+    UI ->> Backend: getAllCourses, getSubjectFromCourse, getChapterFromSubject, 
+           getQuestionsForChapter/getQuestionsForQuePaper  
+
 
     UI ->> Backend: Retrieve Questions & Images
     Backend ->> JeeniDB: `GET /chapters/{chapter_id}/questions` or `GET /question-paper/{paper_id}/questions`
