@@ -25,8 +25,8 @@ sequenceDiagram
     Backend ->> TempDB: Mark Process as Completed
     Backend ->> TempDB: Delete Temporary Data
 
-    UI ->> Backend: Fetch Progress Status
-    Backend ->> UI: Return Processing Status
+    UI ->> TempDB: Fetch Progress Status
+    TempDB ->> UI: Return Processing Status
     UI -->> User: Display Progress
 
 
