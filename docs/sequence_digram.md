@@ -6,13 +6,13 @@ sequenceDiagram
     participant Backend as Backend
     participant TempDB as Temp Data Store
     participant JeeniDB as Jeeni Database
-    participant S3 as S3 Storage
+    participant Mathpix as Mathpix
     participant GenAI as GenAI Processor
 
     User ->> UI: Select Course subject,chapter,getQuestionsForQuePaper
     UI ->> Backend: Retrieve Questions & Images
     Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
-    Backend ->> S3: Fetch Images for Questions
+    Backend ->> JeeniDB: Fetch Images for Questions
     Backend ->> TempDB: Store Data for Processing
 
     loop Process Each Question
