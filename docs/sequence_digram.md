@@ -5,13 +5,13 @@ sequenceDiagram
     participant UI as UI
     participant Backend as Backend
     participant TempDB as Temp Data Store
-    participant MainDB as Main Database
+    participant JeeniDB as Main Databas
     participant S3 as S3 Storage
     participant GenAI as GenAI Processor
 
     User ->> UI: Select Course subject,chapter,getQuestionsForQuePaper
     UI ->> Backend: Retrieve Questions & Images
-    Backend ->> MainDB: Get Questions for Chapter/Get Questions for QuestionPaper
+    Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
     Backend ->> S3: Fetch Images for Questions
     Backend ->> TempDB: Store Data for Processing
 
@@ -22,7 +22,7 @@ sequenceDiagram
         Backend ->> TempDB: Update Processing Status
     end
 
-    Backend ->> MainDB: Update Questions with Processed Data
+    Backend ->> JeeniDB: Update Questions with Processed Data
     Backend ->> TempDB: Mark Process as Completed
     Backend ->> TempDB: Delete Temporary Data
 
