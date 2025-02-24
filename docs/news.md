@@ -1,6 +1,3 @@
-
-### Sequence Diagram
-```mermaid
 sequenceDiagram
     participant User as User
     participant UI as UI
@@ -10,27 +7,26 @@ sequenceDiagram
     participant Mathpix as Mathpix
     participant GenAI as GenAI Processor
 
-    User ->> UI: Select Course, Subject, Chapter, getQuestionsForQuePaper
-    UI ->> Backend: `GET /chapters/{chapter_id}/questions`
+    User ->> UI: Select Course, Subject, Chapter, Get Questions (getAllCourses, getSubjectFromCourse, getChapterFromSubject, getQuestionsForChapter/getQuestionsForQuePaper)
+
+    UI ->> Backend: Retrieve Questions & Images
     Backend ->> JeeniDB: `GET /chapters/{chapter_id}/questions` or `GET /question-paper/{paper_id}/questions`
-    Backend ->> TempDB: `POST /conversion/temp-list`
+    Backend ->> TempDB: `POST /conversion/temp-list` (storeDataForProcessing)
 
     loop Process Each Question
-        Backend ->> TempDB: `GET /conversion/temp-list/{temp_list_id}`
-        Backend ->> GenAI: `POST /conversion/temp-list/{temp_list_id}/process`
+        Backend ->> TempDB: `GET /conversion/temp-list/{temp_list_id}` (fetchNextQuestion)
+        Backend ->> GenAI: `POST /conversion/temp-list/{temp_list_id}/process` (createTempListForConversion)
         GenAI -->> Backend: Return Processed Data
-        Backend ->> TempDB: `PUT /conversion/temp-list/{temp_list_id}`
+        Backend ->> TempDB: `PUT /conversion/temp-list/{temp_list_id}` (updateTempListForConversion)
     end
 
     Backend ->> Mathpix: `PUT /mathpix/update-questions`
     Backend ->> TempDB: `PUT /conversion/temp-list/{temp_list_id}/complete`
     Backend ->> JeeniDB: `PUT /jeenidb/join-table`
-    Backend ->> TempDB: `DELETE /conversion/temp-list/{temp_list_id}`
+    Backend ->> TempDB: `DELETE /conversion/temp-list/{temp_list_id}` (deleteTempListForConversion)
 
     UI ->> TempDB: `GET /conversion/temp-list/{temp_list_id}/progress`
-    Backend ->> JeeniDB: `GET /jeenidb/progress`
+    Backend ->> JeeniDB: `GET /jeenidb/progress` (processTempList)
     Backend ->> Mathpix: `GET /mathpix/progress`
     TempDB ->> UI: Return Processing Status
-    UI -->> User: Display Progress
-```
-
+    UI -->> User: Display Progress (getDataFromTempList)
