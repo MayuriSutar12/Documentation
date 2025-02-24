@@ -37,7 +37,7 @@ sequenceDiagram
    JeeniDB -->> Backend: Return Processing Status
    Backend ->> Mathpix: Fetch Progress Status
    Mathpix ->> Backend: Return Processing Status
-   TempDB ->> UI: Return Processing Status
+   Backend ->> UI: Return Progress Status
    UI -->> User: Display Progress(getDataFromTempList)
 
 
