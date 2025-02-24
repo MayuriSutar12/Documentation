@@ -23,7 +23,7 @@ sequenceDiagram
         Backend ->> TempDB: Fetch Next Question
         Backend ->> GenAI: Process Question(createTempListForConversion)
         GenAI -->> Backend: Return Processed Data
-        Backend ->> TempDB: Update Processing Status(updateTempListForConversion)
+        Backend ->> TempDB: Update Matching Status(updateTempListForConversion)
     end
 
     Backend ->> Mathpix: Update Questions with Processed Data
