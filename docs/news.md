@@ -10,8 +10,7 @@ sequenceDiagram
     participant GenAI as GenAI Processor
 
     User ->> UI: Select Course, Subject, Chapter, Get Questions
-    UI ->> Backend: getAllCourses, getSubjectFromCourse, getChapterFromSubject, 
-           getQuestionsForChapter/getQuestionsForQuePaper  
+    UI ->> Backend: getAllCourses, getSubjectFromCourse, getChapterFromSubject,getQuestionsForChapter/getQuestionsForQuePaper  
 
 
     UI ->> Backend: Retrieve Questions & Images
