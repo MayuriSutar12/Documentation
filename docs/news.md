@@ -1,4 +1,3 @@
----
 
 ### Sequence Diagram
 ```mermaid
@@ -34,4 +33,4 @@ sequenceDiagram
     TempDB ->> UI: Return Processing Status
     UI -->> User: Display Progress
 ```
----
+
