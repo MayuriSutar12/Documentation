@@ -1,1 +1,26 @@
+Participant User  
+Participant System  
+Participant Database  
+Participant S3  
+Participant GenAI  
+
+User -> System: Select Course and Chapter  
+System -> Database: Retrieve all questions  
+System -> S3: Retrieve Images  
+System -> Database: Store Data in Temp Data Store  
+
+loop Process One Question at a Time  
+    System -> GenAI: Process Question  
+    GenAI -> System: Return Processed Question  
+    System -> Database: Update Status in Temp Store  
+    System -> Database: Update Question Info  
+end  
+
+User -> System: View Progress  
+System -> Database: Fetch Temp Store Data  
+
+alt Process Completed  
+    System -> Database: Update All Questions  
+    System -> Database: Delete Temp Store Data  
+end  
 
