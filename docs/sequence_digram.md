@@ -21,7 +21,7 @@ sequenceDiagram
         Backend ->> TempDB: Update Processing Status
     end
 
-    Backend ->> JeeniDB: Update Questions with Processed Data
+    Backend ->> Mathpix: Update Questions with Processed Data
     Backend ->> TempDB: Mark Process as Completed
     Backend ->> TempDB: Delete Temporary Data
 
