@@ -32,11 +32,11 @@ sequenceDiagram
     Backend ->> TempDB: Delete Temporary Data(deleteTempListForConversion)
 
 
-    UI ->> TempDB: Fetch Progress Status
+    
    Backend ->> JeeniDB: Fetch Progress Status(processTempList)
-  Backend ->> Mathpix: Fetch Progress Status 
-    TempDB ->> UI: Return Processing Status
-    UI -->> User: Display Progress(getDataFromTempList)
+   Backend ->> Mathpix: Fetch Progress Status 
+   TempDB ->> UI: Return Processing Status
+   UI -->> User: Display Progress(getDataFromTempList)
 
 
 ```
