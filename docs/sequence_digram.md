@@ -23,7 +23,9 @@ sequenceDiagram
 
     Backend ->> Mathpix: Update Questions with Processed Data
     Backend ->> TempDB: Mark Process as Completed
+    Backend ->> JeeniDB: Shift matching column to join table
     Backend ->> TempDB: Delete Temporary Data
+
 
     UI ->> TempDB: Fetch Progress Status
     TempDB ->> UI: Return Processing Status
