@@ -12,7 +12,6 @@ sequenceDiagram
     User ->> UI: Select Course subject,chapter,getQuestionsForQuePaper
     UI ->> Backend: Retrieve Questions & Images
     Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
-    Backend ->> JeeniDB: Fetch Images for Questions
     Backend ->> TempDB: Store Data for Processing
 
     loop Process Each Question
