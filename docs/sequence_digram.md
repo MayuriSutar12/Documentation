@@ -9,8 +9,7 @@ sequenceDiagram
     participant Mathpix as Mathpix
     participant GenAI as GenAI Processor
 
-    User ->> UI: Select Course subject,chapter,getQuestionsForQuePaper
-      UI ->>(getQuestionsForChapter)/(getQuestionsForQuePaper)
+    User ->> UI: Select Course subject,chapter(getQuestionsForChapter)/(getQuestionsForQuePaper)
 
 
     UI ->> Backend: Retrieve Questions & Images
