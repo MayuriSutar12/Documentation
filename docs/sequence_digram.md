@@ -5,7 +5,7 @@ sequenceDiagram
     participant UI as UI
     participant Backend as Backend
     participant TempDB as Temp Data Store
-    participant JeeniDB as Main Databas
+    participant JeeniDB as Jeeni Database
     participant S3 as S3 Storage
     participant GenAI as GenAI Processor
 
