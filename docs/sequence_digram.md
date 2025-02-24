@@ -18,22 +18,22 @@ sequenceDiagram
 
     loop Process Each Question
         Backend ->> TempDB: Fetch Next Question
-        Backend ->> GenAI: Process Question
+        Backend ->> GenAI: Process Question(createTempListForConversion)
         GenAI -->> Backend: Return Processed Data
-        Backend ->> TempDB: Update Processing Status
+        Backend ->> TempDB: Update Processing Status(updateTempListForConversion)
     end
 
     Backend ->> Mathpix: Update Questions with Processed Data
     Backend ->> TempDB: Mark Process as Completed
     Backend ->> JeeniDB: Shift matching column to join table
-    Backend ->> TempDB: Delete Temporary Data
+    Backend ->> TempDB: Delete Temporary Data(deleteTempListForConversion)
 
 
     UI ->> TempDB: Fetch Progress Status
-   Backend ->> JeeniDB: Fetch Progress Status
+   Backend ->> JeeniDB: Fetch Progress Status(processTempList)
   Backend ->> Mathpix: Fetch Progress Status 
     TempDB ->> UI: Return Processing Status
-    UI -->> User: Display Progress
+    UI -->> User: Display Progress(getDataFromTempList)
 
 
 ```
