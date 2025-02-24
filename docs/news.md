@@ -1,3 +1,5 @@
+### Sequence Diagram
+```mermaid
 sequenceDiagram
     participant User as User
     participant UI as UI
@@ -30,3 +32,4 @@ sequenceDiagram
     Backend ->> Mathpix: `GET /mathpix/progress`
     TempDB ->> UI: Return Processing Status
     UI -->> User: Display Progress (getDataFromTempList)
+```
