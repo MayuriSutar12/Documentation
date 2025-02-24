@@ -10,17 +10,20 @@ sequenceDiagram
     participant GenAI as GenAI Processor
 
     User ->> UI: Select Course subject,chapter(getQuestionsForChapter)/(getQuestionsForQuePaper)
-
+    
 
     UI ->> Backend: Retrieve Questions & Images
+    
     Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
+    JeeniDB -->> Backend: Return Question Id, Question img, options img, answer key, Solution img
+    Backend -->> UI: Return Question Id, Question img, options img, answer key, Solution img
     Backend ->> TempDB: Store Data for Processing
 
     loop Process Each Question
         Backend ->> TempDB: Fetch Next Question
         Backend ->> GenAI: Process Question(createTempListForConversion)
         GenAI -->> Backend: Return Processed Data
-        Backend ->> TempDB: Update Processing Status(updateTempListForConversion)
+        Backend ->> TempDB: Update Matching Status(updateTempListForConversion)
     end
 
     Backend ->> Mathpix: Update Questions with Processed Data
@@ -29,11 +32,13 @@ sequenceDiagram
     Backend ->> TempDB: Delete Temporary Data(deleteTempListForConversion)
 
 
-    UI ->> TempDB: Fetch Progress Status
+    
    Backend ->> JeeniDB: Fetch Progress Status(processTempList)
-  Backend ->> Mathpix: Fetch Progress Status 
-    TempDB ->> UI: Return Processing Status
-    UI -->> User: Display Progress(getDataFromTempList)
+   JeeniDB -->> Backend: Return Processing Status
+   Backend ->> Mathpix: Fetch Progress Status
+   Mathpix ->> Backend: Return Processing Status
+   Backend ->> UI: Return Progress Status
+   UI -->> User: Display Progress(getDataFromTempList)
 
 
 ```
