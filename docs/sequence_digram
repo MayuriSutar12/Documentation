@@ -1,6 +1,5 @@
-
 ### Sequence Diagram
-mermaid
+```mermaid
 sequenceDiagram
     participant User as User
     participant UI as UI
@@ -30,5 +29,6 @@ sequenceDiagram
     UI ->> Backend: Fetch Progress Status
     Backend ->> UI: Return Processing Status
     UI -->> User: Display Progress
+
 
 ```
