@@ -13,8 +13,9 @@ sequenceDiagram
     
 
     UI ->> Backend: Retrieve Questions & Images
-    Backend -->> UI: Return Question Id, Question img, options img, answer key, Solution img
+    
     Backend ->> JeeniDB: Get Questions for Chapter/Get Questions for QuestionPaper
+    Backend -->> UI: Return Question Id, Question img, options img, answer key, Solution img
     Backend ->> TempDB: Store Data for Processing
 
     loop Process Each Question
